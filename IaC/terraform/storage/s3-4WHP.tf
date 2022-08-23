@@ -10,7 +10,7 @@ provider "aws" {
 resource "aws_s3_bucket" "safebucket" {
   provider = aws.central
   bucket   = "tf-test-bucket-source-12345"
-  acl      = "public-read"
+  acl      = "private"
 
   logging {
     target_bucket = aws_s3_bucket.log_bucket.id
