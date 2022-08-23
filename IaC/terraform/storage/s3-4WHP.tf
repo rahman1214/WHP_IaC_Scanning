@@ -11,6 +11,8 @@ resource "aws_s3_bucket" "safebucket" {
   provider = aws.central
   bucket   = "tf-test-bucket-source-12345"
   acl      = "private"
+versioning {
+    enabled = true
 
   logging {
     target_bucket = aws_s3_bucket.log_bucket.id
